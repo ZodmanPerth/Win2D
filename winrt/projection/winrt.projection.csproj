@@ -1,13 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0-windows$(TargetPlatformVersion)</TargetFramework>
-    <PreserveCompilationContext>false</PreserveCompilationContext>
+    <!-- <PreserveCompilationContext>false</PreserveCompilationContext> -->
     <AnalysisLevel>4</AnalysisLevel>
     <WarningLevel>4</WarningLevel>
     <LangVersion>latest</LangVersion>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <AssemblyName>Microsoft.Graphics.Canvas.Interop</AssemblyName>
-    <Platforms>AnyCPU</Platforms>
     <UseUwp>true</UseUwp>
 
     <!--
@@ -65,7 +64,6 @@
   <!-- CsWinRT input projects and assemblies -->
   <ItemGroup>
     <ProjectReference Include="..\lib\winrt.lib.uap.vcxproj" PrivateAssets="compile" />
-    <CSWinRTInputs Include="$(MergedWinmdDirectory)\Microsoft.Graphics.Canvas.winmd" />
   </ItemGroup>
 
   <ItemGroup>
