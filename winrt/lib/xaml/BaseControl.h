@@ -868,24 +868,11 @@ namespace ABI { namespace Microsoft { namespace Graphics { namespace Canvas { na
                     m_isVisible = !!isVisible;
                 }
             }
+            // get_Visible fails when running in the designer, in which case we leave m_isVisible set to true.
             else if (SUCCEEDED(m_window->get_Visible(&isVisible)))
             {
                 m_isVisible = !!isVisible;
             }
-
-            //else if (m_window)  // added a null reference check
-            //{
-            //    // get_Visible fails when running in the designer, in which case we leave m_isVisible set to true.
-            //    if (SUCCEEDED(m_window->get_Visible(&isVisible)))
-            //    {
-            //        m_isVisible = !!isVisible;
-            //    }
-            //}
-            //else
-            //{
-            //    // When there is neither a XAML root nor a window we aren't visible
-            //    m_isVisible = false;
-            //}
         }
 
         void UpdateDpi()
